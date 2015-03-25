@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		1A51C6391ABD72F4002ECB5A /* SSDPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A51C6381ABD72F4002ECB5A /* SSDPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A51C63F1ABD72F4002ECB5A /* SSDPClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A51C6331ABD72F4002ECB5A /* SSDPClient.framework */; };
-		1A51C6461ABD72F4002ECB5A /* SSDPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C6451ABD72F4002ECB5A /* SSDPClientTests.swift */; };
+		1A51C6571ABD73DC002ECB5A /* SSDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C6561ABD73DC002ECB5A /* SSDPClient.swift */; };
+		1A5971581AC1E725006CC29B /* SSDPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C6451ABD72F4002ECB5A /* SSDPClientTests.swift */; };
+		1A59715A1AC1E853006CC29B /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A5971591AC1E853006CC29B /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A59715C1AC1E85B006CC29B /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59715B1AC1E85B006CC29B /* GCDAsyncUdpSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,10 @@
 		1A51C63E1ABD72F4002ECB5A /* SSDPClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSDPClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A51C6441ABD72F4002ECB5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A51C6451ABD72F4002ECB5A /* SSDPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSDPClientTests.swift; sourceTree = "<group>"; };
+		1A51C6561ABD73DC002ECB5A /* SSDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDPClient.swift; sourceTree = "<group>"; };
+		1A5971591AC1E853006CC29B /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		1A59715B1AC1E85B006CC29B /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		1AE8765C1AC2110400833AF0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +60,8 @@
 		1A51C6291ABD72F4002ECB5A = {
 			isa = PBXGroup;
 			children = (
+				1AE8765C1AC2110400833AF0 /* README.md */,
+				1A51C6531ABD739F002ECB5A /* Vendor */,
 				1A51C6351ABD72F4002ECB5A /* SSDPClient */,
 				1A51C6421ABD72F4002ECB5A /* SSDPClientTests */,
 				1A51C6341ABD72F4002ECB5A /* Products */,
@@ -72,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				1A51C6381ABD72F4002ECB5A /* SSDPClient.h */,
+				1A51C6561ABD73DC002ECB5A /* SSDPClient.swift */,
 				1A51C6361ABD72F4002ECB5A /* Supporting Files */,
 			);
 			path = SSDPClient;
@@ -102,6 +112,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1A51C6531ABD739F002ECB5A /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				1A5971591AC1E853006CC29B /* GCDAsyncUdpSocket.h */,
+				1A59715B1AC1E85B006CC29B /* GCDAsyncUdpSocket.m */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -110,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A51C6391ABD72F4002ECB5A /* SSDPClient.h in Headers */,
+				1A59715A1AC1E853006CC29B /* GCDAsyncUdpSocket.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A59715C1AC1E85B006CC29B /* GCDAsyncUdpSocket.m in Sources */,
+				1A51C6571ABD73DC002ECB5A /* SSDPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A51C6461ABD72F4002ECB5A /* SSDPClientTests.swift in Sources */,
+				1A5971581AC1E725006CC29B /* SSDPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +257,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -279,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -315,6 +339,8 @@
 		1A51C64A1ABD72F4002ECB5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -326,12 +352,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		1A51C64B1ABD72F4002ECB5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -349,6 +378,7 @@
 		1A51C64D1ABD72F4002ECB5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -367,6 +397,7 @@
 		1A51C64E1ABD72F4002ECB5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -397,6 +428,7 @@
 				1A51C64B1ABD72F4002ECB5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A51C64C1ABD72F4002ECB5A /* Build configuration list for PBXNativeTarget "SSDPClientTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +437,7 @@
 				1A51C64E1ABD72F4002ECB5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

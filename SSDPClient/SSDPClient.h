@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "GCDAsyncUdpSocket.h"
 
 //! Project version number for SSDPClient.
 FOUNDATION_EXPORT double SSDPClientVersionNumber;
