@@ -14,7 +14,9 @@ class SSDPClientTests: XCTestCase {
     
     lazy var ssdpClient: SSDPClient = SSDPClient(delegate: self)
     
-    var expectation: XCTestExpectation?
+    var startSearch: XCTestExpectation?
+    var receiveResponse: XCTestExpectation?
+    var endSearch: XCTestExpectation?
     
     override func setUp() {
         super.setUp()
@@ -24,42 +26,51 @@ class SSDPClientTests: XCTestCase {
         super.tearDown()
     }
     
-    // The SSDP serveur should responds to the query
-    // This test only works if ans SSDP server responds to the query
-    func testDiscoveryResponse() {
-        self.expectation = self.expectationWithDescription("SSDP response")
-        
-        ssdpClient.discoverForDuration("ssdp:all", duration: 5)
-        
-        self.waitForExpectationsWithTimeout(5, handler: nil)
-    }
-    
-    // The delegate should be called at the end of search
-    func testEndDiscovery() {
-        self.expectation = self.expectationWithDescription("End of search")
+    func testStartDiscovery() {
+        self.startSearch = self.expectationWithDescription("Start of search")
         
         ssdpClient.discoverForDuration("ssdp:all", duration: 1)
         
         self.waitForExpectationsWithTimeout(2, handler: nil)
+        
+        self.startSearch = nil
+    }
+    
+    // The SSDP serveur should responds to the query
+    // This test only works if ans SSDP server responds to the query
+    func testDiscoveryResponse() {
+        self.receiveResponse = self.expectationWithDescription("Receive response")
+            
+        ssdpClient.discoverForDuration("ssdp:all", duration: 5)
+        
+        self.waitForExpectationsWithTimeout(5, handler: nil)
+        
+        self.receiveResponse = nil
+    }
+    
+    // The delegate should be called at the end of search
+    func testEndDiscovery() {
+        self.endSearch = self.expectationWithDescription("End of search")
+        
+        ssdpClient.discoverForDuration("ssdp:all", duration: 1)
+        
+        self.waitForExpectationsWithTimeout(2, handler: nil)
+        
+        self.endSearch = nil
     }
     
 }
 
 extension SSDPClientTests: SSDPClientDelegate {
     func didStartSearch() {
+        self.startSearch?.fulfill()
     }
     
     func didReceiveResponse(response: String) {
-        if self.expectation != nil {
-            self.expectation?.fulfill()
-            self.expectation = nil
-        }
+        self.receiveResponse?.fulfill()
     }
     
     func didEndSearch() {
-        if self.expectation != nil {
-            self.expectation?.fulfill()
-            self.expectation = nil
-        }
+        self.endSearch?.fulfill()
     }
 }

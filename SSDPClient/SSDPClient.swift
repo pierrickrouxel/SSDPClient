@@ -96,7 +96,6 @@ public class SSDPClient: NSObject {
         if response != nil {
             if let delegate = self.delegate {
                 delegate.didReceiveResponse(response!)
-                println(response)
             }
         }
     }
