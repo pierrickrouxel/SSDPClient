@@ -8,42 +8,41 @@ import SSDPClient
 ```
 
 ### Initializing
-init(delegate:)
-The delegate shoud conform to SSDPClientDelegate
+```swift
+init(delegate: SSDPClientDelegate)
+```
+The delegate should conform to SSDPClientDelegate
+
 
 ### Methods
 ```swift
-search(st)
+discoverForDuration(sn: String, duration: Int)
 ```
-Start the search for a service type.
+Search services for duration in seconds.  
+`stop` is automatically called at the end of duration.  
 You can use `ssdp:all` to browse all services.
 
 ```swift
-searchForDuration(sn, duration)
-```
-Search services for duration in seconds.
-`stopSearch` is automatically called at the end of duration.
-
-```swift
-stopSearch()
+stop()
 ```
 Stop the search.
 
 ### Delegate (SSDPClientDelegate)
 ```swift
-didStartSearch()
+ssdpClientDidStartDiscovery()
 ```
 The search has started.
 
 ```swift
-didReceiveResponse(headers)
+ssdpClientDidFindService(headers: [String: String])
 ```
 A service has responded.
 
 ```swift
-didEndSearch()
+ssdpClientDidEndDiscovery()
 ```
 The search has ended.
+
 
 ## Header
 ST: Service Type

@@ -10,13 +10,13 @@ import Foundation
 
 public protocol SSDPClientDelegate {
     // The discovery is started
-    func didStartSearch()
+    func ssdpClientDidStartDiscovery()
     
     // A service was found
-    func didFindService(response: String)
+    func ssdpClientDidFindService(response: String)
     
     // The discrovery is ended
-    func didEndSearch()
+    func ssdpClientDidEndDiscovery()
 }
 
 public class SSDPClient: NSObject {
@@ -30,7 +30,7 @@ public class SSDPClient: NSObject {
         self.delegate = delegate
     }
     
-    // Discover SSDP services for a duration
+    // Discover SSDP services for a duration in secons
     public func discoverForDuration(sn: String, duration: Int) {
         println("Start SSDP discovery for \(duration) seconds...")
         
@@ -68,7 +68,7 @@ public class SSDPClient: NSObject {
     
     public func onUdpSocket(sock: AsyncUdpSocket!, didSendDataWithTag tag: Int) {
         // Call delegate
-        self.delegate!.didStartSearch()
+        self.delegate!.ssdpClientDidStartDiscovery()
         
         println("SSDP discovery started")
     }
@@ -78,7 +78,7 @@ public class SSDPClient: NSObject {
         var response = NSString(data: data, encoding: NSUTF8StringEncoding)
         if response != nil {
             if let delegate = self.delegate {
-                delegate.didFindService(response!)
+                delegate.ssdpClientDidFindService(response!)
             }
         }
         return true
@@ -87,7 +87,7 @@ public class SSDPClient: NSObject {
     // The socket is closed
     public func onUdpSocketDidClose(sock: AsyncUdpSocket!) {
         // Call delegate
-        self.delegate!.didEndSearch()
+        self.delegate!.ssdpClientDidEndDiscovery()
         
         println("SSDP discovery stopped")
     }

@@ -14,9 +14,9 @@ class SSDPClientTests: XCTestCase {
     
     lazy var ssdpClient: SSDPClient = SSDPClient(delegate: self)
     
-    var startSearch: XCTestExpectation?
-    var receiveResponse: XCTestExpectation?
-    var endSearch: XCTestExpectation?
+    var startDiscovery: XCTestExpectation?
+    var findService: XCTestExpectation?
+    var endDiscovery: XCTestExpectation?
     
     override func setUp() {
         super.setUp()
@@ -28,50 +28,50 @@ class SSDPClientTests: XCTestCase {
     
     // The delegate should be called at the start of search
     func testStartDiscovery() {
-        self.startSearch = self.expectationWithDescription("Start of search")
+        self.startDiscovery = self.expectationWithDescription("Start of search")
         
         ssdpClient.discoverForDuration("ssdp:all", duration: 1)
         
         self.waitForExpectationsWithTimeout(2, handler: nil)
         
-        self.startSearch = nil
+        self.startDiscovery = nil
     }
     
     // The SSDP serveur should responds to the query
     // This test only works if ans SSDP server responds to the query
     func testDiscoveryService() {
-        self.receiveResponse = self.expectationWithDescription("Receive response")
+        self.findService = self.expectationWithDescription("Receive response")
             
         ssdpClient.discoverForDuration("ssdp:all", duration: 5)
         
         self.waitForExpectationsWithTimeout(5, handler: nil)
         
-        self.receiveResponse = nil
+        self.findService = nil
     }
     
     // The delegate should be called at the end of search
     func testEndDiscovery() {
-        self.endSearch = self.expectationWithDescription("End of search")
+        self.endDiscovery = self.expectationWithDescription("End of search")
         
         ssdpClient.discoverForDuration("ssdp:all", duration: 1)
         
         self.waitForExpectationsWithTimeout(2, handler: nil)
         
-        self.endSearch = nil
+        self.endDiscovery = nil
     }
     
 }
 
 extension SSDPClientTests: SSDPClientDelegate {
-    func didStartSearch() {
-        self.startSearch?.fulfill()
+    func ssdpClientDidStartDiscovery() {
+        self.startDiscovery?.fulfill()
     }
     
-    func didFindService(response: String) {
-        self.receiveResponse?.fulfill()
+    func ssdpClientDidFindService(response: String) {
+        self.findService?.fulfill()
     }
     
-    func didEndSearch() {
-        self.endSearch?.fulfill()
+    func ssdpClientDidEndDiscovery() {
+        self.endDiscovery?.fulfill()
     }
 }
