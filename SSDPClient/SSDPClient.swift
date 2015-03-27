@@ -75,11 +75,8 @@ public class SSDPClient: NSObject {
     // Get network responses
     public func onUdpSocket(sock: AsyncUdpSocket!, didReceiveData data: NSData!, withTag tag: Int, fromHost host: String!, port: UInt16) -> Bool {
         var response = NSString(data: data, encoding: NSUTF8StringEncoding)
-        if response != nil {
-            if let delegate = self.delegate {
-                delegate.ssdpClientDidFindService(response!)
-            }
-        }
+        
+        self.delegate?.ssdpClientDidFindService(response!)
         return true
     }
     
