@@ -67,7 +67,7 @@ extension SSDPClientTests: SSDPClientDelegate {
         self.startDiscovery?.fulfill()
     }
     
-    func ssdpClientDidFindService(response: String) {
+    func ssdpClientDidFindService(headers: [String: String]) {
         self.findService?.fulfill()
     }
     

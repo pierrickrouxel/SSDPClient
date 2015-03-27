@@ -13,7 +13,7 @@ public protocol SSDPClientDelegate {
     func ssdpClientDidStartDiscovery()
     
     // A service was found
-    func ssdpClientDidFindService(response: String)
+    func ssdpClientDidFindService(headers: [String: String])
     
     // The discrovery is ended
     func ssdpClientDidEndDiscovery()
@@ -61,6 +61,30 @@ public class SSDPClient: NSObject {
         }
     }
     
+    // Parse response to dictionary of headers
+    private func parseResponse(response: String) -> [String: String] {
+        var headers = [String: String]()
+        let lines = response.componentsSeparatedByString("\n")
+        
+        for line in lines {
+            var line = line.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            
+            if let colon = line.rangeOfString(":")?.startIndex {
+                var key = line.substringToIndex(colon)
+                var value = line.substringFromIndex(colon.successor())
+                key = key.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                value = value.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+                
+                // If key found append value to dictionary
+                if countElements(key) > 0 {
+                    headers[key] = value
+                }
+            }
+        }
+        
+        return headers
+    }
+    
 }
 
  extension SSDPClient: AsyncUdpSocketDelegate {
@@ -75,8 +99,8 @@ public class SSDPClient: NSObject {
     // Get network responses
     public func onUdpSocket(sock: AsyncUdpSocket!, didReceiveData data: NSData!, withTag tag: Int, fromHost host: String!, port: UInt16) -> Bool {
         var response = NSString(data: data, encoding: NSUTF8StringEncoding)
-        
-        self.delegate?.ssdpClientDidFindService(response!)
+        var headers = self.parseResponse(response!)
+        self.delegate?.ssdpClientDidFindService(headers)
         return true
     }
     
