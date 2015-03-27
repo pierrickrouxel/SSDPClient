@@ -26,6 +26,7 @@ class SSDPClientTests: XCTestCase {
         super.tearDown()
     }
     
+    // The delegate should be called at the start of search
     func testStartDiscovery() {
         self.startSearch = self.expectationWithDescription("Start of search")
         
@@ -38,7 +39,7 @@ class SSDPClientTests: XCTestCase {
     
     // The SSDP serveur should responds to the query
     // This test only works if ans SSDP server responds to the query
-    func testDiscoveryResponse() {
+    func testDiscoveryService() {
         self.receiveResponse = self.expectationWithDescription("Receive response")
             
         ssdpClient.discoverForDuration("ssdp:all", duration: 5)
@@ -66,7 +67,7 @@ extension SSDPClientTests: SSDPClientDelegate {
         self.startSearch?.fulfill()
     }
     
-    func didReceiveResponse(response: String) {
+    func didFindService(response: String) {
         self.receiveResponse?.fulfill()
     }
     

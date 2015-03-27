@@ -11,8 +11,8 @@
 		1A51C63F1ABD72F4002ECB5A /* SSDPClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A51C6331ABD72F4002ECB5A /* SSDPClient.framework */; };
 		1A51C6571ABD73DC002ECB5A /* SSDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C6561ABD73DC002ECB5A /* SSDPClient.swift */; };
 		1A5971581AC1E725006CC29B /* SSDPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C6451ABD72F4002ECB5A /* SSDPClientTests.swift */; };
-		1A59715A1AC1E853006CC29B /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A5971591AC1E853006CC29B /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A59715C1AC1E85B006CC29B /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A59715B1AC1E85B006CC29B /* GCDAsyncUdpSocket.m */; };
+		2D506A8B1AC56DA20074CB8D /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D506A8A1AC56DA20074CB8D /* AsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D506A8D1AC56DA70074CB8D /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D506A8C1AC56DA70074CB8D /* AsyncUdpSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +33,9 @@
 		1A51C6441ABD72F4002ECB5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A51C6451ABD72F4002ECB5A /* SSDPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSDPClientTests.swift; sourceTree = "<group>"; };
 		1A51C6561ABD73DC002ECB5A /* SSDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDPClient.swift; sourceTree = "<group>"; };
-		1A5971591AC1E853006CC29B /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		1A59715B1AC1E85B006CC29B /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		1AE8765C1AC2110400833AF0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2D506A8A1AC56DA20074CB8D /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		2D506A8C1AC56DA70074CB8D /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +115,8 @@
 		1A51C6531ABD739F002ECB5A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				1A5971591AC1E853006CC29B /* GCDAsyncUdpSocket.h */,
-				1A59715B1AC1E85B006CC29B /* GCDAsyncUdpSocket.m */,
+				2D506A8A1AC56DA20074CB8D /* AsyncUdpSocket.h */,
+				2D506A8C1AC56DA70074CB8D /* AsyncUdpSocket.m */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -129,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A51C6391ABD72F4002ECB5A /* SSDPClient.h in Headers */,
-				1A59715A1AC1E853006CC29B /* GCDAsyncUdpSocket.h in Headers */,
+				2D506A8B1AC56DA20074CB8D /* AsyncUdpSocket.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A59715C1AC1E85B006CC29B /* GCDAsyncUdpSocket.m in Sources */,
+				2D506A8D1AC56DA70074CB8D /* AsyncUdpSocket.m in Sources */,
 				1A51C6571ABD73DC002ECB5A /* SSDPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
