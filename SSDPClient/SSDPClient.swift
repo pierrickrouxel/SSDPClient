@@ -22,9 +22,7 @@ public protocol SSDPClientDelegate {
 public class SSDPClient: NSObject {
     
     private var delegate: SSDPClientDelegate?
-    lazy private var socket: AsyncUdpSocket = {
-        return AsyncUdpSocket(delegate: self)
-    }()
+    private lazy var socket: AsyncUdpSocket = AsyncUdpSocket(delegate: self)
 
     public init(delegate: SSDPClientDelegate) {
         self.delegate = delegate
@@ -56,6 +54,7 @@ public class SSDPClient: NSObject {
         self.socket.sendData(messageData, toHost: "239.255.255.250", port: 1900, withTimeout: -1, tag: 0)
     }
     
+    // Stop discovery
     public func stop() {
         if !self.socket.isClosed() {
             self.socket.close()
