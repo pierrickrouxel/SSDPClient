@@ -76,7 +76,7 @@ public class SSDPClient: NSObject {
                 value = value.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 
                 // If key found append value to dictionary
-                if countElements(key) > 0 {
+                if count(key) > 0 {
                     headers[key] = value
                 }
             }
@@ -99,7 +99,7 @@ public class SSDPClient: NSObject {
     // Get network responses
     public func onUdpSocket(sock: AsyncUdpSocket!, didReceiveData data: NSData!, withTag tag: Int, fromHost host: String!, port: UInt16) -> Bool {
         var response = NSString(data: data, encoding: NSUTF8StringEncoding)
-        var headers = self.parseResponse(response!)
+        var headers = self.parseResponse(response! as String)
         self.delegate?.ssdpClientDidFindService(headers)
         return true
     }
