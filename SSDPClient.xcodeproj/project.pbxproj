@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		1A51C6391ABD72F4002ECB5A /* SSDPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A51C6381ABD72F4002ECB5A /* SSDPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A51C63F1ABD72F4002ECB5A /* SSDPClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A51C6331ABD72F4002ECB5A /* SSDPClient.framework */; };
-		1A51C6571ABD73DC002ECB5A /* SSDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C6561ABD73DC002ECB5A /* SSDPClient.swift */; };
 		1A5971581AC1E725006CC29B /* SSDPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C6451ABD72F4002ECB5A /* SSDPClientTests.swift */; };
 		1AE8765F1AC71D1F00833AF0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1AE8765E1AC71D1F00833AF0 /* .gitignore */; };
 		2D506A8B1AC56DA20074CB8D /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D506A8A1AC56DA20074CB8D /* AsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2D506A8D1AC56DA70074CB8D /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D506A8C1AC56DA70074CB8D /* AsyncUdpSocket.m */; };
+		2D6ACE3D1AE552EA00DCE23B /* SSDPClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6ACE321AE552E900DCE23B /* SSDPClient.framework */; };
+		2D6ACE4E1AE5552E00DCE23B /* SSDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C6561ABD73DC002ECB5A /* SSDPClient.swift */; };
+		2D6ACE4F1AE5553600DCE23B /* SSDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C6561ABD73DC002ECB5A /* SSDPClient.swift */; };
+		2D6ACE501AE5553900DCE23B /* SSDPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A51C6381ABD72F4002ECB5A /* SSDPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D6ACE521AE5554200DCE23B /* SSDPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51C6451ABD72F4002ECB5A /* SSDPClientTests.swift */; };
+		2D6ACE531AE5555900DCE23B /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D506A8A1AC56DA20074CB8D /* AsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D6ACE541AE5556000DCE23B /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D506A8C1AC56DA70074CB8D /* AsyncUdpSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,13 +30,20 @@
 			remoteGlobalIDString = 1A51C6321ABD72F4002ECB5A;
 			remoteInfo = SSDPClient;
 		};
+		2D6ACE3E1AE552EA00DCE23B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A51C62A1ABD72F4002ECB5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D6ACE311AE552E900DCE23B;
+			remoteInfo = "SSDPClient iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1A51C6331ABD72F4002ECB5A /* SSDPClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSDPClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A51C6371ABD72F4002ECB5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A51C6381ABD72F4002ECB5A /* SSDPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSDPClient.h; sourceTree = "<group>"; };
-		1A51C63E1ABD72F4002ECB5A /* SSDPClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSDPClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A51C63E1ABD72F4002ECB5A /* SSDPClientTests OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SSDPClientTests OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A51C6441ABD72F4002ECB5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A51C6451ABD72F4002ECB5A /* SSDPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSDPClientTests.swift; sourceTree = "<group>"; };
 		1A51C6561ABD73DC002ECB5A /* SSDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSDPClient.swift; sourceTree = "<group>"; };
@@ -38,6 +51,8 @@
 		1AE8765E1AC71D1F00833AF0 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2D506A8A1AC56DA20074CB8D /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
 		2D506A8C1AC56DA70074CB8D /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		2D6ACE321AE552E900DCE23B /* SSDPClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSDPClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D6ACE3C1AE552EA00DCE23B /* SSDPClientTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SSDPClientTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +68,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A51C63F1ABD72F4002ECB5A /* SSDPClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D6ACE2E1AE552E900DCE23B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D6ACE391AE552EA00DCE23B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6ACE3D1AE552EA00DCE23B /* SSDPClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				1A51C6331ABD72F4002ECB5A /* SSDPClient.framework */,
-				1A51C63E1ABD72F4002ECB5A /* SSDPClientTests.xctest */,
+				1A51C63E1ABD72F4002ECB5A /* SSDPClientTests OSX.xctest */,
+				2D6ACE321AE552E900DCE23B /* SSDPClient.framework */,
+				2D6ACE3C1AE552EA00DCE23B /* SSDPClientTests iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,12 +168,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2D6ACE2F1AE552E900DCE23B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6ACE531AE5555900DCE23B /* AsyncUdpSocket.h in Headers */,
+				2D6ACE501AE5553900DCE23B /* SSDPClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1A51C6321ABD72F4002ECB5A /* SSDPClient */ = {
+		1A51C6321ABD72F4002ECB5A /* SSDPClient OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A51C6491ABD72F4002ECB5A /* Build configuration list for PBXNativeTarget "SSDPClient" */;
+			buildConfigurationList = 1A51C6491ABD72F4002ECB5A /* Build configuration list for PBXNativeTarget "SSDPClient OSX" */;
 			buildPhases = (
 				1A51C62E1ABD72F4002ECB5A /* Sources */,
 				1A51C62F1ABD72F4002ECB5A /* Frameworks */,
@@ -152,14 +193,14 @@
 			);
 			dependencies = (
 			);
-			name = SSDPClient;
+			name = "SSDPClient OSX";
 			productName = SSDPClient;
 			productReference = 1A51C6331ABD72F4002ECB5A /* SSDPClient.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		1A51C63D1ABD72F4002ECB5A /* SSDPClientTests */ = {
+		1A51C63D1ABD72F4002ECB5A /* SSDPClientTests OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A51C64C1ABD72F4002ECB5A /* Build configuration list for PBXNativeTarget "SSDPClientTests" */;
+			buildConfigurationList = 1A51C64C1ABD72F4002ECB5A /* Build configuration list for PBXNativeTarget "SSDPClientTests OSX" */;
 			buildPhases = (
 				1A51C63A1ABD72F4002ECB5A /* Sources */,
 				1A51C63B1ABD72F4002ECB5A /* Frameworks */,
@@ -170,9 +211,45 @@
 			dependencies = (
 				1A51C6411ABD72F4002ECB5A /* PBXTargetDependency */,
 			);
-			name = SSDPClientTests;
+			name = "SSDPClientTests OSX";
 			productName = SSDPClientTests;
-			productReference = 1A51C63E1ABD72F4002ECB5A /* SSDPClientTests.xctest */;
+			productReference = 1A51C63E1ABD72F4002ECB5A /* SSDPClientTests OSX.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2D6ACE311AE552E900DCE23B /* SSDPClient iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D6ACE451AE552EA00DCE23B /* Build configuration list for PBXNativeTarget "SSDPClient iOS" */;
+			buildPhases = (
+				2D6ACE2D1AE552E900DCE23B /* Sources */,
+				2D6ACE2E1AE552E900DCE23B /* Frameworks */,
+				2D6ACE2F1AE552E900DCE23B /* Headers */,
+				2D6ACE301AE552E900DCE23B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SSDPClient iOS";
+			productName = "SSDPClient iOS";
+			productReference = 2D6ACE321AE552E900DCE23B /* SSDPClient.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2D6ACE3B1AE552EA00DCE23B /* SSDPClientTests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D6ACE481AE552EA00DCE23B /* Build configuration list for PBXNativeTarget "SSDPClientTests iOS" */;
+			buildPhases = (
+				2D6ACE381AE552EA00DCE23B /* Sources */,
+				2D6ACE391AE552EA00DCE23B /* Frameworks */,
+				2D6ACE3A1AE552EA00DCE23B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D6ACE3F1AE552EA00DCE23B /* PBXTargetDependency */,
+			);
+			name = "SSDPClientTests iOS";
+			productName = "SSDPClient iOSTests";
+			productReference = 2D6ACE3C1AE552EA00DCE23B /* SSDPClientTests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -190,6 +267,12 @@
 					1A51C63D1ABD72F4002ECB5A = {
 						CreatedOnToolsVersion = 6.2;
 					};
+					2D6ACE311AE552E900DCE23B = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					2D6ACE3B1AE552EA00DCE23B = {
+						CreatedOnToolsVersion = 6.3;
+					};
 				};
 			};
 			buildConfigurationList = 1A51C62D1ABD72F4002ECB5A /* Build configuration list for PBXProject "SSDPClient" */;
@@ -204,8 +287,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1A51C6321ABD72F4002ECB5A /* SSDPClient */,
-				1A51C63D1ABD72F4002ECB5A /* SSDPClientTests */,
+				1A51C6321ABD72F4002ECB5A /* SSDPClient OSX */,
+				1A51C63D1ABD72F4002ECB5A /* SSDPClientTests OSX */,
+				2D6ACE311AE552E900DCE23B /* SSDPClient iOS */,
+				2D6ACE3B1AE552EA00DCE23B /* SSDPClientTests iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -226,6 +311,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2D6ACE301AE552E900DCE23B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D6ACE3A1AE552EA00DCE23B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -233,8 +332,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6ACE4F1AE5553600DCE23B /* SSDPClient.swift in Sources */,
 				2D506A8D1AC56DA70074CB8D /* AsyncUdpSocket.m in Sources */,
-				1A51C6571ABD73DC002ECB5A /* SSDPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,13 +345,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2D6ACE2D1AE552E900DCE23B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6ACE4E1AE5552E00DCE23B /* SSDPClient.swift in Sources */,
+				2D6ACE541AE5556000DCE23B /* AsyncUdpSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D6ACE381AE552EA00DCE23B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6ACE521AE5554200DCE23B /* SSDPClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		1A51C6411ABD72F4002ECB5A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1A51C6321ABD72F4002ECB5A /* SSDPClient */;
+			target = 1A51C6321ABD72F4002ECB5A /* SSDPClient OSX */;
 			targetProxy = 1A51C6401ABD72F4002ECB5A /* PBXContainerItemProxy */;
+		};
+		2D6ACE3F1AE552EA00DCE23B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D6ACE311AE552E900DCE23B /* SSDPClient iOS */;
+			targetProxy = 2D6ACE3E1AE552EA00DCE23B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -292,6 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -332,6 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -354,7 +477,7 @@
 				INFOPLIST_FILE = SSDPClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SSDPClient;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -374,7 +497,7 @@
 				INFOPLIST_FILE = SSDPClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SSDPClient;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -413,6 +536,96 @@
 			};
 			name = Release;
 		};
+		2D6ACE461AE552EA00DCE23B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SSDPClient/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = SSDPClient;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2D6ACE471AE552EA00DCE23B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = SSDPClient/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = SSDPClient;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2D6ACE491AE552EA00DCE23B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SSDPClient iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2D6ACE4A1AE552EA00DCE23B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "SSDPClient iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -425,7 +638,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A51C6491ABD72F4002ECB5A /* Build configuration list for PBXNativeTarget "SSDPClient" */ = {
+		1A51C6491ABD72F4002ECB5A /* Build configuration list for PBXNativeTarget "SSDPClient OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A51C64A1ABD72F4002ECB5A /* Debug */,
@@ -434,7 +647,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A51C64C1ABD72F4002ECB5A /* Build configuration list for PBXNativeTarget "SSDPClientTests" */ = {
+		1A51C64C1ABD72F4002ECB5A /* Build configuration list for PBXNativeTarget "SSDPClientTests OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A51C64D1ABD72F4002ECB5A /* Debug */,
@@ -442,6 +655,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		2D6ACE451AE552EA00DCE23B /* Build configuration list for PBXNativeTarget "SSDPClient iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D6ACE461AE552EA00DCE23B /* Debug */,
+				2D6ACE471AE552EA00DCE23B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2D6ACE481AE552EA00DCE23B /* Build configuration list for PBXNativeTarget "SSDPClientTests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D6ACE491AE552EA00DCE23B /* Debug */,
+				2D6ACE4A1AE552EA00DCE23B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

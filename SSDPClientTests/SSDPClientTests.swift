@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Pierrick Rouxel. All rights reserved.
 //
 
-import Cocoa
 import XCTest
 import SSDPClient
 

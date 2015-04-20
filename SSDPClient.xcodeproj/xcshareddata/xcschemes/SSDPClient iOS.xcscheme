@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0620"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1A51C6321ABD72F4002ECB5A"
-               BuildableName = "SSDPClient.framework"
-               BlueprintName = "SSDPClient"
+               BlueprintIdentifier = "2D6ACE311AE552E900DCE23B"
+               BuildableName = "SSDPClient iOS.framework"
+               BlueprintName = "SSDPClient iOS"
                ReferencedContainer = "container:SSDPClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1A51C63D1ABD72F4002ECB5A"
-               BuildableName = "SSDPClientTests.xctest"
-               BlueprintName = "SSDPClientTests"
+               BlueprintIdentifier = "2D6ACE3B1AE552EA00DCE23B"
+               BuildableName = "SSDPClientTests iOS.xctest"
+               BlueprintName = "SSDPClientTests iOS"
                ReferencedContainer = "container:SSDPClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1A51C63D1ABD72F4002ECB5A"
-               BuildableName = "SSDPClientTests.xctest"
-               BlueprintName = "SSDPClientTests"
+               BlueprintIdentifier = "2D6ACE3B1AE552EA00DCE23B"
+               BuildableName = "SSDPClientTests iOS.xctest"
+               BlueprintName = "SSDPClientTests iOS"
                ReferencedContainer = "container:SSDPClient.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1A51C6321ABD72F4002ECB5A"
-            BuildableName = "SSDPClient.framework"
-            BlueprintName = "SSDPClient"
+            BlueprintIdentifier = "2D6ACE311AE552E900DCE23B"
+            BuildableName = "SSDPClient iOS.framework"
+            BlueprintName = "SSDPClient iOS"
             ReferencedContainer = "container:SSDPClient.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,9 +75,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1A51C6321ABD72F4002ECB5A"
-            BuildableName = "SSDPClient.framework"
-            BlueprintName = "SSDPClient"
+            BlueprintIdentifier = "2D6ACE311AE552E900DCE23B"
+            BuildableName = "SSDPClient iOS.framework"
+            BlueprintName = "SSDPClient iOS"
             ReferencedContainer = "container:SSDPClient.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -93,9 +93,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1A51C6321ABD72F4002ECB5A"
-            BuildableName = "SSDPClient.framework"
-            BlueprintName = "SSDPClient"
+            BlueprintIdentifier = "2D6ACE311AE552E900DCE23B"
+            BuildableName = "SSDPClient iOS.framework"
+            BlueprintName = "SSDPClient iOS"
             ReferencedContainer = "container:SSDPClient.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
