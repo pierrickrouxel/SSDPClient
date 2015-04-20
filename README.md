@@ -45,9 +45,9 @@ The search has ended.
 
 
 ## Header
-ST: Service Type
-USN: Unique Service Name
-LOCATION: URL pointing to the service
+ST: Service Type  
+USN: Unique Service Name  
+LOCATION: URL pointing to the service  
 SERVER: Type of server
 
 
