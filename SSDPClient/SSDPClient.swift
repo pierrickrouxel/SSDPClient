@@ -29,7 +29,7 @@ public class SSDPClient: NSObject {
     }
     
     // Discover SSDP services for a duration in secons
-    public func discoverForDuration(sn: String, duration: Int) {
+    public func discoverForDuration(ST: String, duration: Int) {
         println("Start SSDP discovery for \(duration) seconds...")
         
         var error: NSError?
@@ -48,7 +48,7 @@ public class SSDPClient: NSObject {
         var message = "M-SEARCH * HTTP/1.1\r\n" +
             "MAN: \"ssdp:discover\"\r\n" +
             "HOST: 239.255.255.250:1900\r\n" +
-            "ST: \"\(sn)\"\r\n" +
+            "ST: \"\(ST)\"\r\n" +
         "MX: 5\r\n\r\n"
         var messageData = message.dataUsingEncoding(NSUTF8StringEncoding)
         self.socket.sendData(messageData, toHost: "239.255.255.250", port: 1900, withTimeout: -1, tag: 0)

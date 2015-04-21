@@ -18,7 +18,7 @@ The delegate should conform to SSDPClientDelegate
 
 ### Methods
 ```swift
-discoverForDuration(sn: String, duration: Int)
+discoverForDuration(ST: String, duration: Int)
 ```
 Search services for duration in seconds.  
 `stop` is automatically called at the end of duration.  
