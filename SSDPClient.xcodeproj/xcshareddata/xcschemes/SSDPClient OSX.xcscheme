@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1A51C6321ABD72F4002ECB5A"
-               BuildableName = "SSDPClient OSX.framework"
+               BuildableName = "SSDPClient.framework"
                BlueprintName = "SSDPClient OSX"
                ReferencedContainer = "container:SSDPClient.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A51C6321ABD72F4002ECB5A"
-            BuildableName = "SSDPClient OSX.framework"
+            BuildableName = "SSDPClient.framework"
             BlueprintName = "SSDPClient OSX"
             ReferencedContainer = "container:SSDPClient.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A51C6321ABD72F4002ECB5A"
-            BuildableName = "SSDPClient OSX.framework"
+            BuildableName = "SSDPClient.framework"
             BlueprintName = "SSDPClient OSX"
             ReferencedContainer = "container:SSDPClient.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1A51C6321ABD72F4002ECB5A"
-            BuildableName = "SSDPClient OSX.framework"
+            BuildableName = "SSDPClient.framework"
             BlueprintName = "SSDPClient OSX"
             ReferencedContainer = "container:SSDPClient.xcodeproj">
          </BuildableReference>
