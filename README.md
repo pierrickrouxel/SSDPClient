@@ -1,58 +1,56 @@
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# SSDPClient ![](https://img.shields.io/badge/swift-3.0-orange.svg) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub release](https://img.shields.io/badge/version-v0.1.0-brightgreen.svg)](https://github.com/pierrickrouxel/SSDPClient/releases) ![Github stable](https://img.shields.io/badge/stable-true-brightgreen.svg)
 
-# SSDPClient
-This framework provides a simple way to discover SSDP devices.
+[SSDP](https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol) client for Swift using the Swift Package Manager. Works on iOS, macOS, and Linux.
 
+## Installation
+[![GitHub spm](https://img.shields.io/badge/spm-supported-brightgreen.svg)](https://swift.org/package-manager/)
+
+SSDPClient is available through [Swift Package Manager](https://swift.org/package-manager/). To install it, add the following line to your `Package.swift` dependencies:
+
+```swift
+.Package(url: "https://github.com/pierrickrouxel/SSDPClient.git", majorVersion: 0, minor: 1)
+```
 
 ## Usage
+SSDPClient can be used to discover SSDP devices and services :
+
 ```swift
 import SSDPClient
+
+class ServiceDiscovery {
+    let client = SSDPDiscovery()
+
+    init() {
+        self.client.delegate = self
+        self.client.discover()
+    }
+}
 ```
 
-### Initializing
+To handle the discovery implement the `SSDPDiscoveryDelegate` protocol :
+
 ```swift
-init(delegate: SSDPClientDelegate)
+extension ServiceDiscovery: SSDPDiscoveryDelegate {
+    func ssdpDiscovery(_: SSDPDiscovery, didDiscoverService: SSDPService) {
+        // ...
+    }
+}
 ```
-The delegate should conform to SSDPClientDelegate
-
 
 ### Methods
-```swift
-discoverForDuration(ST: String, duration: Int)
-```
-Search services for duration in seconds.  
-`stop` is automatically called at the end of duration.  
-You can use `ssdp:all` to browse all services.
+`SSDPDiscovery` provides two instance methods to discover services :
 
-```swift
-stop()
-```
-Stop the search.
+* `discoverService(type: String = "ssdp:all", timeout seconds: TimeInterval = 10)` - Discover SSDP services for a duration.
 
-### Delegate (SSDPClientDelegate)
-```swift
-ssdpClientDidStartDiscovery()
-```
-The search has started.
+* `stop()` - Stop the discovery before the timeout.
 
-```swift
-ssdpClientDidFindService(headers: [String: String])
-```
-A service has responded.
+### Delegate
+The `SSDPDiscoveryDelegate` protocol defines delegate methods that you should implement when using `SSDPDiscovery` discover tasks :
 
-```swift
-ssdpClientDidEndDiscovery()
-```
-The search has ended.
+* `func ssdpDiscovery(_: SSDPDiscovery, didDiscoverService: SSDPService)` - Tells the delegate a requested service has been discovered.
 
+* `func ssdpDiscovery(_: SSDPDiscovery, didFinishWithError: Error)` - Tells the delegate that the discovery ended due to an error.
 
-## Header
-ST: Service Type  
-USN: Unique Service Name  
-LOCATION: URL pointing to the service  
-SERVER: Type of server
+* `func ssdpDiscoveryDidStart(_: SSDPDiscovery)` - Tells the delegate that the discovery has started.
 
-
-## References
-SSDP specification:
-http://quimby.gnus.org/internet-drafts/draft-cai-ssdp-v1-03.txt
+* `func ssdpDiscoveryDidFinish(_: SSDPDiscovery)` - Tells the delegate that the discovery has finished.
