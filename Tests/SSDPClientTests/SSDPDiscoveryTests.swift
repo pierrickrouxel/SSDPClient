@@ -46,20 +46,20 @@ class SSDPDiscoveryTests: XCTestCase {
 }
 
 extension SSDPDiscoveryTests: SSDPDiscoveryDelegate {
-    func ssdpDiscovery(_: SSDPDiscovery, didDiscoverService: SSDPService) {
+    func ssdpDiscovery(_ discovery: SSDPDiscovery, didDiscoverService service: SSDPService) {
         self.discoverServiceExpectation?.fulfill()
         self.discoverServiceExpectation = nil
     }
 
-    func ssdpDiscoveryDidStart(_: SSDPDiscovery) {
+    func ssdpDiscoveryDidStart(_ discovery: SSDPDiscovery) {
         self.startExpectation?.fulfill()
     }
 
-    func ssdpDiscoveryDidFinish(_: SSDPDiscovery) {
+    func ssdpDiscoveryDidFinish(_ discovery: SSDPDiscovery) {
         self.stopExpectation?.fulfill()
     }
 
-    func ssdpDiscovery(_: SSDPDiscovery, didFinishWithError: Error) {
+    func ssdpDiscovery(_ discovery: SSDPDiscovery, didFinishWithError error: Error) {
         self.errorExpectation?.fulfill()
     }
 }

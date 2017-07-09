@@ -37,7 +37,7 @@ extension ServiceDiscovery: SSDPDiscoveryDelegate {
 }
 ```
 
-### Methods
+### Discovery
 `SSDPDiscovery` provides two instance methods to discover services :
 
 * `discoverService(type: String = "ssdp:all", timeout seconds: TimeInterval = 10)` - Discover SSDP services for a duration.
@@ -47,10 +47,10 @@ extension ServiceDiscovery: SSDPDiscoveryDelegate {
 ### Delegate
 The `SSDPDiscoveryDelegate` protocol defines delegate methods that you should implement when using `SSDPDiscovery` discover tasks :
 
-* `func ssdpDiscovery(_: SSDPDiscovery, didDiscoverService: SSDPService)` - Tells the delegate a requested service has been discovered.
+* `func ssdpDiscovery(_ discovery: SSDPDiscovery, didDiscoverService service: SSDPService)` - Tells the delegate a requested service has been discovered.
 
-* `func ssdpDiscovery(_: SSDPDiscovery, didFinishWithError: Error)` - Tells the delegate that the discovery ended due to an error.
+* `func ssdpDiscovery(_ discovery: SSDPDiscovery, didFinishWithError error: Error)` - Tells the delegate that the discovery ended due to an error.
 
-* `func ssdpDiscoveryDidStart(_: SSDPDiscovery)` - Tells the delegate that the discovery has started.
+* `func ssdpDiscoveryDidStart(_ discovery: SSDPDiscovery)` - Tells the delegate that the discovery has started.
 
-* `func ssdpDiscoveryDidFinish(_: SSDPDiscovery)` - Tells the delegate that the discovery has finished.
+* `func ssdpDiscoveryDidFinish(_ discovery: SSDPDiscovery)` - Tells the delegate that the discovery has finished.

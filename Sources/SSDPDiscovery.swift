@@ -8,26 +8,26 @@ import Socket
 /// Delegate for service discovery
 public protocol SSDPDiscoveryDelegate {
     /// Tells the delegate a requested service has been discovered.
-    func ssdpDiscovery(_: SSDPDiscovery, didDiscoverService: SSDPService)
+    func ssdpDiscovery(_ discovery: SSDPDiscovery, didDiscoverService service: SSDPService)
 
     /// Tells the delegate that the discovery ended due to an error.
-    func ssdpDiscovery(_: SSDPDiscovery, didFinishWithError: Error)
+    func ssdpDiscovery(_ discovery: SSDPDiscovery, didFinishWithError error: Error)
 
     /// Tells the delegate that the discovery has started.
-    func ssdpDiscoveryDidStart(_: SSDPDiscovery)
+    func ssdpDiscoveryDidStart(_ discovery: SSDPDiscovery)
 
     /// Tells the delegate that the discovery has finished.
-    func ssdpDiscoveryDidFinish(_: SSDPDiscovery)
+    func ssdpDiscoveryDidFinish(_ discovery: SSDPDiscovery)
 }
 
 extension SSDPDiscoveryDelegate {
-    func ssdpDiscovery(_: SSDPDiscovery, didDiscoverService: SSDPService) {}
+    func ssdpDiscovery(_ discovery: SSDPDiscovery, didDiscoverService service: SSDPService) {}
 
-    func ssdpDiscovery(_: SSDPDiscovery, didFinishWithError: Error) {}
+    func ssdpDiscovery(_ discovery: SSDPDiscovery, didFinishWithError error: Error) {}
 
-    func ssdpDiscoveryDidStart(_: SSDPDiscovery) {}
+    func ssdpDiscoveryDidStart(_ discovery: SSDPDiscovery) {}
 
-    func ssdpDiscoveryDidFinish(_: SSDPDiscovery) {}
+    func ssdpDiscoveryDidFinish(_ discovery: SSDPDiscovery) {}
 }
 
 /// SSDP discovery for UPnP devices on the LAN
