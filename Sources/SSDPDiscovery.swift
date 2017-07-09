@@ -33,8 +33,10 @@ extension SSDPDiscoveryDelegate {
 /// SSDP discovery for UPnP devices on the LAN
 public class SSDPDiscovery {
 
+    /// The UDP socket
     private var socket: Socket?
 
+    /// Delegate for service discovery
     var delegate: SSDPDiscoveryDelegate?
 
     /// The client is discovering
@@ -103,17 +105,17 @@ public class SSDPDiscovery {
     /**
         Discover SSDP services for a duration.
         - Parameters:
-            - type: The type of the searched service.
+            - searchTarget: The type of the searched service.
             - timeout: Timeout in seconds.
     */
-    open func discoverService(type: String = "ssdp:all", timeout seconds: TimeInterval = 10) {
+    open func discoverService(searchTarget: String = "ssdp:all", timeout seconds: TimeInterval = 10) {
         Log.info("Start SSDP discovery for \(Int(seconds)) seconds...")
         self.delegate?.ssdpDiscoveryDidStart(self)
 
         let message = "M-SEARCH * HTTP/1.1\r\n" +
             "MAN: \"ssdp:discover\"\r\n" +
             "HOST: 239.255.255.250:1900\r\n" +
-            "ST: \(type)\r\n" +
+            "ST: \(searchTarget)\r\n" +
             "MX: \(Int(seconds))\r\n\r\n"
 
         do {
