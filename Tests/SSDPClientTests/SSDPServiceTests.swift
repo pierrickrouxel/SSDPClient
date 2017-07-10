@@ -12,9 +12,10 @@ let response = "HTTP/1.1 200 OK\r\n" +
     "OPT: \"http://schemas.upnp.org/upnp/1/0/\"; ns=01\r\n\r\n"
 
 class SSDPServiceTests: XCTestCase {
-    let service = SSDPService(response: response)
+    let service = SSDPService(host: "192.168.1.1", response: response)
 
     func testParse() {
+        XCTAssertEqual("192.168.1.1", self.service.host)
         XCTAssertEqual("upnp:rootdevice", self.service.searchTarget!)
         XCTAssertEqual("uuid:111111111-2222-3333-4444-000000000000::upnp:rootdevice", self.service.uniqueServiceName!)
         XCTAssertEqual("system/system UPnP/1.1 MiniUPnPd/1.8", self.service.server!)

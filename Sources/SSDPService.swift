@@ -1,6 +1,8 @@
 import Foundation
 
 public class SSDPService {
+    /// The host of service
+    var host: String
     /// The value of `LOCATION` header
     var location: String?
     /// The value of `SERVER` header
@@ -15,9 +17,12 @@ public class SSDPService {
     /**
         Initialize the `SSDPService` with the discovery response.
 
-        - Parameter response: The discovery response.
+        - Parameters:
+            - host: The host of service
+            - response: The discovery response.
     */
-    init(response: String) {
+    init(host: String, response: String) {
+        self.host = host
         self.location = self.parse(header: "LOCATION", in: response)
         self.server = self.parse(header: "SERVER", in: response)
         self.searchTarget = self.parse(header: "ST", in: response)

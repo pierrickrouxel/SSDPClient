@@ -58,6 +58,7 @@ The `SSDPDiscoveryDelegate` protocol defines delegate methods that you should im
 ### Service
 `SSDPService` is the discovered service. It contains the following attributes :
 
+* `host: String` - The host of service
 * `location: String?` - The value of `LOCATION` header
 * `server: String?` - The value of `SERVER` header
 * `searchTarget: String?` - The value of `ST` header

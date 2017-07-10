@@ -62,12 +62,13 @@ public class SSDPDiscovery {
     private func readResponses() {
         do {
             var data = Data()
-            let (bytesRead, _) = try self.socket!.readDatagram(into: &data)
+            let (bytesRead, address) = try self.socket!.readDatagram(into: &data)
 
             if bytesRead > 0 {
                 let response = String(data: data, encoding: .utf8)
-                Log.debug("Received: \(response!)")
-                self.delegate?.ssdpDiscovery(self, didDiscoverService: SSDPService(response: response!))
+                let (remoteHost, _) = Socket.hostnameAndPort(from: address!)!
+                Log.debug("Received: \(response!) from \(remoteHost)")
+                self.delegate?.ssdpDiscovery(self, didDiscoverService: SSDPService(host: remoteHost, response: response!))
             }
 
         } catch let error {
