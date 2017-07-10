@@ -40,9 +40,9 @@ extension ServiceDiscovery: SSDPDiscoveryDelegate {
 ### Discovery
 `SSDPDiscovery` provides two instance methods to discover services :
 
-* `discoverService(type: String = "ssdp:all", timeout seconds: TimeInterval = 10)` - Discover SSDP services for a duration.
+* `discoverService(forDuration duration: TimeInterval = 10, searchTarget: String = "ssdp:all")` - Discover SSDP services for a duration.
 
-* `stop()` - Stop the discovery before the timeout.
+* `stop()` - Stop the discovery before the end.
 
 ### Delegate
 The `SSDPDiscoveryDelegate` protocol defines delegate methods that you should implement when using `SSDPDiscovery` discover tasks :

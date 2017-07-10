@@ -78,7 +78,7 @@ public class SSDPDiscovery {
     }
 
     /// Read responses with timeout.
-    private func readResponses(timeout seconds: TimeInterval) {
+    private func readResponses(forDuration duration: TimeInterval) {
         let queue = DispatchQueue.global()
 
         queue.async() {
@@ -87,7 +87,7 @@ public class SSDPDiscovery {
             } while self.isDiscovering
         }
 
-        queue.asyncAfter(deadline: .now() + seconds) { [unowned self] in
+        queue.asyncAfter(deadline: .now() + duration) { [unowned self] in
             self.stop()
         }
     }
@@ -105,24 +105,24 @@ public class SSDPDiscovery {
     /**
         Discover SSDP services for a duration.
         - Parameters:
+            - duration: The amount of time to wait.
             - searchTarget: The type of the searched service.
-            - timeout: Timeout in seconds.
     */
-    open func discoverService(searchTarget: String = "ssdp:all", timeout seconds: TimeInterval = 10) {
-        Log.info("Start SSDP discovery for \(Int(seconds)) seconds...")
+    open func discoverService(forDuration duration: TimeInterval = 10, searchTarget: String = "ssdp:all") {
+        Log.info("Start SSDP discovery for \(Int(duration)) duration...")
         self.delegate?.ssdpDiscoveryDidStart(self)
 
         let message = "M-SEARCH * HTTP/1.1\r\n" +
             "MAN: \"ssdp:discover\"\r\n" +
             "HOST: 239.255.255.250:1900\r\n" +
             "ST: \(searchTarget)\r\n" +
-            "MX: \(Int(seconds))\r\n\r\n"
+            "MX: \(Int(duration))\r\n\r\n"
 
         do {
             self.socket = try Socket.create(type: .datagram, proto: .udp)
             try self.socket!.listen(on: 0)
 
-            self.readResponses(timeout: seconds)
+            self.readResponses(forDuration: duration)
 
             Log.debug("Send: \(message)")
             try self.socket?.write(from: message, to: Socket.createAddress(for: "239.255.255.250", on: 1900)!)

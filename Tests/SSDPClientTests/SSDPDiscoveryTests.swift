@@ -1,7 +1,7 @@
 import XCTest
 @testable import SSDPClient
 
-let timeout: TimeInterval = 5
+let duration: TimeInterval = 5
 
 class SSDPDiscoveryTests: XCTestCase {
     let client = SSDPDiscovery()
@@ -27,16 +27,16 @@ class SSDPDiscoveryTests: XCTestCase {
         self.startExpectation = expectation(description: "Start")
         self.discoverServiceExpectation = expectation(description: "DiscoverService")
 
-        self.client.discoverService(searchTarget: "ssdp:all", timeout: timeout)
+        self.client.discoverService(forDuration: duration, searchTarget: "ssdp:all")
 
-        wait(for: [self.errorExpectation!, self.startExpectation!, self.discoverServiceExpectation!], timeout: timeout)
+        wait(for: [self.errorExpectation!, self.startExpectation!, self.discoverServiceExpectation!], timeout: duration)
     }
 
     func testStop() {
         self.stopExpectation = expectation(description: "Stop")
         self.client.discoverService()
         self.client.stop()
-        wait(for: [self.errorExpectation!, self.stopExpectation!], timeout: timeout)
+        wait(for: [self.errorExpectation!, self.stopExpectation!], timeout: duration)
     }
 
     static var allTests = [
