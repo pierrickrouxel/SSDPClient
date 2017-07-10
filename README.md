@@ -54,3 +54,11 @@ The `SSDPDiscoveryDelegate` protocol defines delegate methods that you should im
 * `func ssdpDiscoveryDidStart(_ discovery: SSDPDiscovery)` - Tells the delegate that the discovery has started.
 
 * `func ssdpDiscoveryDidFinish(_ discovery: SSDPDiscovery)` - Tells the delegate that the discovery has finished.
+
+### Service
+`SSDPService` is the discovered service. It contains the following attributes :
+
+* `location: String?` - The value of `LOCATION` header
+* `server: String?` - The value of `SERVER` header
+* `searchTarget: String?` - The value of `ST` header
+* `uniqueServiceName: String?` - The value of `USN` header
