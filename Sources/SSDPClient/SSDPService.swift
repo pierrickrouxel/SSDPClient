@@ -2,15 +2,15 @@ import Foundation
 
 public class SSDPService {
     /// The host of service
-    public var host: String
+    public internal(set) var host: String
     /// The value of `LOCATION` header
-    var location: String?
+    public internal(set) var location: String?
     /// The value of `SERVER` header
-    var server: String?
+    public internal(set) var server: String?
     /// The value of `ST` header
-    var searchTarget: String?
+    public internal(set) var searchTarget: String?
     /// The value of `USN` header
-    var uniqueServiceName: String?
+    public internal(set) var uniqueServiceName: String?
 
     // MARK: Initialisation
 
