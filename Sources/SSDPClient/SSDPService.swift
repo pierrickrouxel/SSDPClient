@@ -2,7 +2,7 @@ import Foundation
 
 public class SSDPService {
     /// The host of service
-    var host: String
+    public var host: String
     /// The value of `LOCATION` header
     var location: String?
     /// The value of `SERVER` header
