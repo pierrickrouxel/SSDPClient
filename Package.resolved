@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "HeliumLogger",
+        "repositoryURL": "https://github.com/IBM-Swift/HeliumLogger.git",
+        "state": {
+          "branch": null,
+          "revision": "2afeb4c02f5a48a7fbd081fe8607b91eeebd7ecb",
+          "version": "1.7.1"
+        }
+      },
+      {
+        "package": "LoggerAPI",
+        "repositoryURL": "https://github.com/IBM-Swift/LoggerAPI.git",
+        "state": {
+          "branch": null,
+          "revision": "6b62fe66da9b8794d6581e5c341710eea3173cd4",
+          "version": "1.7.1"
+        }
+      },
+      {
+        "package": "Socket",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
+        "state": {
+          "branch": null,
+          "revision": "0d2663bf81ae2588b61b358fe4a25d6f0dc4d8af",
+          "version": "0.12.87"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

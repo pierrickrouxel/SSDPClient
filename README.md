@@ -1,6 +1,6 @@
-# SSDPClient ![](https://img.shields.io/badge/swift-3.0-orange.svg) ![](https://img.shields.io/badge/plateforms-iOS%20%7C%20mac%20OS%20%7C%20linux-lightgrey.svg) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub release](https://img.shields.io/badge/version-v0.1.1-brightgreen.svg)](https://github.com/pierrickrouxel/SSDPClient/releases) ![Github stable](https://img.shields.io/badge/stable-true-brightgreen.svg)
+# SSDPClient ![](https://img.shields.io/badge/swift-4.0-orange.svg) ![](https://img.shields.io/badge/plataforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20linux-lightgrey.svg) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub release](https://img.shields.io/badge/version-v0.2.0-brightgreen.svg)](https://github.com/pierrickrouxel/SSDPClient/releases) ![Github stable](https://img.shields.io/badge/stable-true-brightgreen.svg)
 
-[SSDP](https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol) client for Swift using the Swift Package Manager. Works on iOS, macOS, and Linux.
+[SSDP](https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol) client for Swift using the Swift Package Manager. Works on iOS, macOS, tvOS, watchOS and Linux.
 
 ## Installation
 [![GitHub spm](https://img.shields.io/badge/spm-supported-brightgreen.svg)](https://swift.org/package-manager/)
@@ -8,7 +8,7 @@
 SSDPClient is available through [Swift Package Manager](https://swift.org/package-manager/). To install it, add the following line to your `Package.swift` dependencies:
 
 ```swift
-.Package(url: "https://github.com/pierrickrouxel/SSDPClient.git", majorVersion: 0, minor: 1)
+.package(url: "https://github.com/pierrickrouxel/SSDPClient.git", from: "0.2.0")
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ class ServiceDiscovery {
 
     init() {
         self.client.delegate = self
-        self.client.discover()
+        self.client.discoverService()
     }
 }
 ```

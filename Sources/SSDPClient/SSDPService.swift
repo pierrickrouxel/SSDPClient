@@ -2,15 +2,15 @@ import Foundation
 
 public class SSDPService {
     /// The host of service
-    var host: String
+    public internal(set) var host: String
     /// The value of `LOCATION` header
-    var location: String?
+    public internal(set) var location: String?
     /// The value of `SERVER` header
-    var server: String?
+    public internal(set) var server: String?
     /// The value of `ST` header
-    var searchTarget: String?
+    public internal(set) var searchTarget: String?
     /// The value of `USN` header
-    var uniqueServiceName: String?
+    public internal(set) var uniqueServiceName: String?
 
     // MARK: Initialisation
 
@@ -40,7 +40,7 @@ public class SSDPService {
     */
     private func parse(header: String, in response: String) -> String? {
         if let range = response.range(of: "\(header): .*", options: .regularExpression) {
-            var value = response.substring(with: range)
+            var value = String(response[range])
             value = value.replacingOccurrences(of: "\(header): ", with: "")
             return value
         }

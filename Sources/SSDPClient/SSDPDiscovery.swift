@@ -20,7 +20,7 @@ public protocol SSDPDiscoveryDelegate {
     func ssdpDiscoveryDidFinish(_ discovery: SSDPDiscovery)
 }
 
-extension SSDPDiscoveryDelegate {
+public extension SSDPDiscoveryDelegate {
     func ssdpDiscovery(_ discovery: SSDPDiscovery, didDiscoverService service: SSDPService) {}
 
     func ssdpDiscovery(_ discovery: SSDPDiscovery, didFinishWithError error: Error) {}
@@ -37,10 +37,10 @@ public class SSDPDiscovery {
     private var socket: Socket?
 
     /// Delegate for service discovery
-    var delegate: SSDPDiscoveryDelegate?
+    public var delegate: SSDPDiscoveryDelegate?
 
     /// The client is discovering
-    var isDiscovering: Bool {
+    public var isDiscovering: Bool {
         get {
             return self.socket != nil && self.socket!.isConnected
         }
@@ -48,7 +48,7 @@ public class SSDPDiscovery {
 
     // MARK: Initialisation
 
-    init() {
+    public init() {
         HeliumLogger.use()
     }
 
