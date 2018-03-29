@@ -8,7 +8,7 @@
 SSDPClient is available through [Swift Package Manager](https://swift.org/package-manager/). To install it, add the following line to your `Package.swift` dependencies:
 
 ```swift
-.package(url: "https://github.com/pierrickrouxel/SSDPClient.git", from: "0.2.0")
+.package(url: "https://github.com/OliverS79/SSDPClient.git", from: "0.2.0")
 ```
 
 ## Usage
