@@ -42,7 +42,7 @@ public class SSDPDiscovery {
     /// The client is discovering
     public var isDiscovering: Bool {
         get {
-            return self.socket != nil && self.socket!.isConnected
+            return self.socket != nil
         }
     }
 
@@ -83,9 +83,9 @@ public class SSDPDiscovery {
         let queue = DispatchQueue.global()
 
         queue.async() {
-            repeat {
+            while self.isDiscovering {
                 self.readResponses()
-            } while self.isDiscovering
+            }
         }
 
         queue.asyncAfter(deadline: .now() + duration) { [unowned self] in
