@@ -8,8 +8,8 @@ let package = Package(
         .library(name: "SSDPClient", targets: ["SSDPClient"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/IBM-Swift/BlueSocket.git", from: "0.12.0"),
-        .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.0"),
+        .package(url: "https://github.com/IBM-Swift/BlueSocket.git", from: "1.0.0"),
+        .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.8.0"),
     ],
     targets: [
         .target(

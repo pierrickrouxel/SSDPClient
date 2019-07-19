@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
+        "package": "Socket",
+        "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
+        "state": {
+          "branch": null,
+          "revision": "af50c0e67a9fe9050322b93b0cb9044abfc4feaa",
+          "version": "1.0.47"
+        }
+      },
+      {
         "package": "HeliumLogger",
         "repositoryURL": "https://github.com/IBM-Swift/HeliumLogger.git",
         "state": {
           "branch": null,
-          "revision": "2afeb4c02f5a48a7fbd081fe8607b91eeebd7ecb",
-          "version": "1.7.1"
+          "revision": "779865e83149a59894b14950aa83f70b7e81bc27",
+          "version": "1.8.1"
         }
       },
       {
@@ -17,15 +26,6 @@
           "branch": null,
           "revision": "6b62fe66da9b8794d6581e5c341710eea3173cd4",
           "version": "1.7.1"
-        }
-      },
-      {
-        "package": "Socket",
-        "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
-        "state": {
-          "branch": null,
-          "revision": "0d2663bf81ae2588b61b358fe4a25d6f0dc4d8af",
-          "version": "0.12.87"
         }
       }
     ]
