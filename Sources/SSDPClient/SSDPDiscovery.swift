@@ -109,13 +109,13 @@ public class SSDPDiscovery {
             - duration: The amount of time to wait.
             - searchTarget: The type of the searched service.
     */
-    open func discoverService(forDuration duration: TimeInterval = 10, searchTarget: String = "ssdp:all") {
+    open func discoverService(forDuration duration: TimeInterval = 10, searchTarget: String = "ssdp:all", port: Int32 = 1900) {
         Log.info("Start SSDP discovery for \(Int(duration)) duration...")
         self.delegate?.ssdpDiscoveryDidStart(self)
 
         let message = "M-SEARCH * HTTP/1.1\r\n" +
             "MAN: \"ssdp:discover\"\r\n" +
-            "HOST: 239.255.255.250:1900\r\n" +
+            "HOST: 239.255.255.250:\(port)\r\n" +
             "ST: \(searchTarget)\r\n" +
             "MX: \(Int(duration))\r\n\r\n"
 

@@ -27,7 +27,7 @@ class SSDPDiscoveryTests: XCTestCase {
         self.startExpectation = expectation(description: "Start")
         self.discoverServiceExpectation = expectation(description: "DiscoverService")
 
-        self.client.discoverService(forDuration: duration, searchTarget: "ssdp:all")
+        self.client.discoverService(forDuration: duration, searchTarget: "ssdp:all", port: 1900)
 
         wait(for: [self.errorExpectation!, self.startExpectation!, self.discoverServiceExpectation!], timeout: duration)
     }
