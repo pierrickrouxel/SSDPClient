@@ -126,7 +126,7 @@ public class SSDPDiscovery {
             self.readResponses(forDuration: duration)
 
             Log.debug("Send: \(message)")
-            try self.socket?.write(from: message, to: Socket.createAddress(for: "239.255.255.250", on: 1900)!)
+            try self.socket?.write(from: message, to: Socket.createAddress(for: "239.255.255.250", on: port)!)
 
         } catch let error {
             Log.error("Socket error: \(error)")
