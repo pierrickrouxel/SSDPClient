@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "Socket",
-        "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
+        "repositoryURL": "https://github.com/Kitura/BlueSocket.git",
         "state": {
           "branch": null,
           "revision": "c9894fd117457f1d006575fbfb2fdfd6f79eac03",
@@ -12,7 +12,7 @@
       },
       {
         "package": "HeliumLogger",
-        "repositoryURL": "https://github.com/IBM-Swift/HeliumLogger.git",
+        "repositoryURL": "https://github.com/Kitura/HeliumLogger.git",
         "state": {
           "branch": null,
           "revision": "55fd2f0b70793017acee853c53cfcf8da0bd8d8d",
