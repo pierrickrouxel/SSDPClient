@@ -8,7 +8,7 @@
 SSDPClient is available through [Swift Package Manager](https://swift.org/package-manager/). To install it, add the following line to your `Package.swift` dependencies:
 
 ```swift
-.package(url: "https://github.com/pierrickrouxel/SSDPClient.git", from: "0.2.1")
+.package(url: "https://github.com/pierrickrouxel/SSDPClient.git", from: "0.2.2")
 ```
 
 ## Usage
@@ -63,3 +63,10 @@ The `SSDPDiscoveryDelegate` protocol defines delegate methods that you should im
 * `server: String?` - The value of `SERVER` header
 * `searchTarget: String?` - The value of `ST` header
 * `uniqueServiceName: String?` - The value of `USN` header
+
+## Test
+Run test:
+
+```swift
+swift test
+```

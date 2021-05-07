@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.3
 
 import PackageDescription
 
@@ -8,13 +8,17 @@ let package = Package(
         .library(name: "SSDPClient", targets: ["SSDPClient"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/IBM-Swift/BlueSocket.git", from: "1.0.0"),
-        .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.8.0"),
+        .package(name: "Socket", url: "https://github.com/Kitura/BlueSocket.git", from: "1.0.200"),
+        .package(url: "https://github.com/Kitura/HeliumLogger.git", from: "1.9.200"),
     ],
     targets: [
         .target(
             name: "SSDPClient",
-            dependencies: ["Socket", "HeliumLogger"]),
+            dependencies: [
+                "Socket",
+                "HeliumLogger",
+            ]
+        ),
         .testTarget(
             name: "SSDPClientTests",
             dependencies: ["SSDPClient"]),
