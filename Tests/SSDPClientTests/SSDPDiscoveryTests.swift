@@ -4,6 +4,11 @@ import XCTest
 let duration: TimeInterval = 5
 
 class SSDPDiscoveryTests: XCTestCase {
+    static var allTests = [
+        ("testDiscoverService", testDiscoverService),
+        ("testStop", testStop),
+    ]
+    
     let client = SSDPDiscovery()
 
     var discoverServiceExpectation: XCTestExpectation?
@@ -38,11 +43,6 @@ class SSDPDiscoveryTests: XCTestCase {
         self.client.stop()
         wait(for: [self.errorExpectation!, self.stopExpectation!], timeout: duration)
     }
-
-    static var allTests = [
-        ("testDiscoverService", testDiscoverService),
-        ("testStop", testStop),
-    ]
 }
 
 extension SSDPDiscoveryTests: SSDPDiscoveryDelegate {
