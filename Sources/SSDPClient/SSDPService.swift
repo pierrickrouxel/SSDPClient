@@ -54,12 +54,4 @@ public class SSDPService {
         
         return result
     }
-
-    /**
-        Parse the discovery response.
-
-        - Parameters:
-            - header: The header to parse.
-            - response: The discovery response.
-    */
 }
