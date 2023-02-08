@@ -1,5 +1,7 @@
 import Foundation
 
+private let HeaderRegex = try! NSRegularExpression(pattern: "^([^:]+): (.*)$", options: [.anchorsMatchLines])
+
 public class SSDPService {
     /// The host of service
     public internal(set) var host: String
@@ -23,27 +25,33 @@ public class SSDPService {
     */
     init(host: String, response: String) {
         self.host = host
-        self.location = self.parse(header: "LOCATION", in: response)
-        self.server = self.parse(header: "SERVER", in: response)
-        self.searchTarget = self.parse(header: "ST", in: response)
-        self.uniqueServiceName = self.parse(header: "USN", in: response)
+        let headers = self.parse(response)
+        self.location = headers["LOCATION"]
+        self.server = headers["SERVER"]
+        self.searchTarget = headers["ST"]
+        self.uniqueServiceName = headers["USN"]
     }
 
     // MARK: Private functions
-
+    
     /**
         Parse the discovery response.
-
+     
         - Parameters:
-            - header: The header to parse.
             - response: The discovery response.
-    */
-    private func parse(header: String, in response: String) -> String? {
-        if let range = response.range(of: "\(header): .*", options: .regularExpression) {
-            var value = String(response[range])
-            value = value.replacingOccurrences(of: "\(header): ", with: "")
-            return value
+     */
+    private func parse(_ response: String) -> [String: String] {
+        var result = [String: String]()
+        
+        let matches = HeaderRegex.matches(in: response, range: NSRange(location: 0, length: response.count))
+        for match in matches {
+            let keyCaptureGroupIndex = match.range(at: 1)
+            let key = (response as NSString).substring(with: keyCaptureGroupIndex)
+            let valueCaptureGroupIndex = match.range(at: 2)
+            let value = (response as NSString).substring(with: valueCaptureGroupIndex)
+            result[key.uppercased()] = value
         }
-        return nil
+        
+        return result
     }
 }
