@@ -63,6 +63,7 @@ The `SSDPDiscoveryDelegate` protocol defines delegate methods that you should im
 * `server: String?` - The value of `SERVER` header
 * `searchTarget: String?` - The value of `ST` header
 * `uniqueServiceName: String?` - The value of `USN` header
+* `responseHeaders: [String: String]?` - Key-Value pairs of all original response headers
 
 ## Test
 Run test:
