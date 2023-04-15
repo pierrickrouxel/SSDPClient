@@ -1,10 +1,12 @@
 import Foundation
 
-private let HeaderRegex = try! NSRegularExpression(pattern: "^([^:]+): (.*)$", options: [.anchorsMatchLines])
+private let HeaderRegex = try! NSRegularExpression(pattern: "^([^\r\n:]+): (.*)$", options: [.anchorsMatchLines])
 
 public class SSDPService {
     /// The host of service
     public internal(set) var host: String
+    /// The headers of the original response
+    public internal(set) var responseHeaders: [String: String]?
     /// The value of `LOCATION` header
     public internal(set) var location: String?
     /// The value of `SERVER` header
@@ -25,7 +27,10 @@ public class SSDPService {
     */
     init(host: String, response: String) {
         self.host = host
+        
         let headers = self.parse(response)
+        self.responseHeaders = headers
+        
         self.location = headers["LOCATION"]
         self.server = headers["SERVER"]
         self.searchTarget = headers["ST"]
