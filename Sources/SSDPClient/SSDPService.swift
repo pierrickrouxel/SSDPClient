@@ -2,7 +2,7 @@ import Foundation
 
 private let HeaderRegex = try! NSRegularExpression(pattern: "^([^\r\n:]+): (.*)$", options: [.anchorsMatchLines])
 
-public class SSDPService {
+public class SSDPService: CustomStringConvertible {
     /// The host of service
     public internal(set) var host: String
     /// The headers of the original response
@@ -35,6 +35,10 @@ public class SSDPService {
         self.server = headers["SERVER"]
         self.searchTarget = headers["ST"]
         self.uniqueServiceName = headers["USN"]
+    }
+
+    public var description: String {
+        return "loc: \(self.location!), server: \(self.server!), st: \(self.searchTarget!), usn: \(self.uniqueServiceName!)"
     }
 
     // MARK: Private functions
