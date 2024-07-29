@@ -48,7 +48,7 @@ public class SSDPService {
     private func parse(_ response: String) -> [String: String] {
         var result = [String: String]()
         
-        let matches = HeaderRegex.matches(in: response, range: NSRange(location: 0, length: response.count))
+        let matches = HeaderRegex.matches(in: response, range: NSRange(location: 0, length: response.utf16.count))
         for match in matches {
             let keyCaptureGroupIndex = match.range(at: 1)
             let key = (response as NSString).substring(with: keyCaptureGroupIndex)

@@ -39,7 +39,7 @@ class SSDPServiceTests: XCTestCase {
         XCTAssertNotNil(service.location)
         XCTAssertEqual("http://192.168.1.1:10000/root.xml", service.location)
         XCTAssertEqual("max-age=120", service.responseHeaders?["CACHE-CONTROL"])
-        XCTAssertEqual("\"http://schemas.upnp.org/upnp/1/0/\"; ", service.responseHeaders?["OPT"])
+        XCTAssertEqual("\"http://schemas.upnp.org/upnp/1/0/\"; ns=01", service.responseHeaders?["OPT"])
     }
     
     func testParseCaseInsensitive() {
@@ -55,6 +55,6 @@ class SSDPServiceTests: XCTestCase {
         XCTAssertNotNil(service.location)
         XCTAssertEqual("http://192.168.1.1:10000/root.xml", service.location)
         XCTAssertEqual("max-age=120", service.responseHeaders?["CACHE-CONTROL"])
-        XCTAssertEqual("\"http://schemas.upnp.org/upnp/1/0/\"; ", service.responseHeaders?["OPT"])
+        XCTAssertEqual("\"http://schemas.upnp.org/upnp/1/0/\"; ns=01", service.responseHeaders?["OPT"])
     }
 }
