@@ -79,3 +79,24 @@ Run test:
 ```swift
 swift test
 ```
+
+## Troubleshooting
+
+### The application crash with error code `-9982 Bad file descriptor`
+
+You probably run a security issue. You should grant the local network authorization access.
+
+You can handle this error using the following code:
+
+```swift
+let authorization = LocalNetworkAuthorization()
+authorization.requestAuthorization { granted in
+    if granted {
+        print("Permission Granted")
+        let discovery = ServiceDiscovery(delegate: self)
+        discovery.start()
+    } else {
+        print("Permission denied")
+    }
+}
+```
