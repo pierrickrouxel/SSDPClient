@@ -1,6 +1,6 @@
 # SSDPClient
 
-![](https://img.shields.io/badge/swift-5.3-orange.svg) ![](https://img.shields.io/badge/plataforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20linux-lightgrey.svg) ![gitHub license](https://img.shields.io/badge/license-MIT-blue.svg) [![gitHub release](https://img.shields.io/badge/version-v0.2.3-brightgreen.svg)](https://github.com/pierrickrouxel/SSDPClient/releases) ![github stable](https://img.shields.io/badge/stable-true-brightgreen.svg) [![donate](https://img.shields.io/badge/donate-buy%20me%20a%20coffee-yellow?logo=buy-me-a-coffee)](https://www.buymeacoffee.com/pierrickrouxel)
+![](https://img.shields.io/badge/swift-5.10-orange.svg) ![](https://img.shields.io/badge/plataforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20linux-lightgrey.svg) ![gitHub license](https://img.shields.io/badge/license-MIT-blue.svg) [![gitHub release](https://img.shields.io/badge/version-v1.0.0-brightgreen.svg)](https://github.com/pierrickrouxel/SSDPClient/releases) ![github stable](https://img.shields.io/badge/stable-true-brightgreen.svg) [![donate](https://img.shields.io/badge/donate-buy%20me%20a%20coffee-yellow?logo=buy-me-a-coffee)](https://www.buymeacoffee.com/pierrickrouxel)
 
 [SSDP](https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol) client for Swift using the Swift Package Manager. Works on iOS, macOS, tvOS, watchOS and Linux.
 
@@ -11,7 +11,7 @@
 SSDPClient is available through [Swift Package Manager](https://swift.org/package-manager/). To install it, add the following line to your `Package.swift` dependencies:
 
 ```swift
-.package(url: "https://github.com/pierrickrouxel/SSDPClient.git", from: "0.2.3")
+.package(url: "https://github.com/pierrickrouxel/SSDPClient.git", from: "1.0.0")
 ```
 
 ## Usage
