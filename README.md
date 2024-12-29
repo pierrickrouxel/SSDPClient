@@ -84,6 +84,16 @@ swift test
 
 ### The application crash with error code `-9982 Bad file descriptor`
 
+### iOS 14.0+
+If you are targeting iOS 14.0+ you will need to request a special Multicast Entitlement from Apple: 
+
+[`com.apple.developer.networking.multicast`](https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.networking.multicast)
+
+Without the entitlement, you will not be able to test on an actual device; but you can still test in Simulator.
+
+Regarding the local network authorization access, you do not need to explicitly ask for it; the OS will ask the user upon the first time you attempt to access the local network. It's best practice that you provide your own description in the Info.plist with the key [`NSLocalNetworkUsageDescription`](https://developer.apple.com/documentation/bundleresources/information-property-list/nslocalnetworkusagedescription).
+
+### < iOS 14.0
 You probably run a security issue. You should grant the local network authorization access.
 
 You can handle this error using the following code:
